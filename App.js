@@ -1,0 +1,61 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var phoneSelect = document.getElementById("phoneSelect");
+    var phoneImage = document.getElementById("phoneImage");
+    var phoneSpecs = document.getElementById("phoneSpecs");
+    var phonePrice = document.getElementById("phonePrice");
+    var quantity = document.getElementById("quantity");
+    var carts = document.getElementById("carts");
+    var total = document.getElementById("total");
+    var cash = document.getElementById("cash");
+    var change = document.getElementById("change");
+    var submitOrder = document.getElementById("submitOrder");
+
+    function updatePhoneDetails() {
+        var selectedOption = phoneSelect.options[phoneSelect.selectedIndex];
+        phoneImage.src = selectedOption.getAttribute("data-img");
+        phoneSpecs.textContent = selectedOption.getAttribute("data-specs");
+        phonePrice.textContent = "Price: Php " + selectedOption.getAttribute("data-price");
+    }
+
+    function addOrder() {
+        carts.textContent = ""; // Clear previous orders
+        var selectedOption = phoneSelect.options[phoneSelect.selectedIndex];
+        var price = parseFloat(selectedOption.getAttribute("data-price"));
+        var qty = parseInt(quantity.value);
+        
+        if (qty > 0) {
+            var order = qty + ' pc/s x ' + price + ' ------ ' + selectedOption.textContent + ' ----- Php ' + (qty * price) + '\n';
+            carts.textContent += order;
+        }
+
+        calculateTotal();
+    }
+
+    function calculateTotal() {
+        var lines = carts.value.split('\n');
+        var totalAmount = 0;
+
+        lines.forEach(function(line) {
+            var match = line.match(/Php (\d+)/);
+            if (match) {
+                totalAmount += parseFloat(match[1]);
+            }
+        });
+
+        total.value = "Total: Php " + totalAmount;
+    }
+
+    function calculateChange() {
+        var totalAmount = parseFloat(total.value.replace("Total: Php ", ""));
+        var cashTendered = parseFloat(cash.value);
+        change.value = "Change: Php " + (cashTendered - totalAmount);
+    }
+
+    phoneSelect.addEventListener("change", updatePhoneDetails);
+    quantity.addEventListener("keyup", addOrder);
+    submitOrder.addEventListener("click", calculateChange);
+    cash.addEventListener("keyup", calculateChange);
+
+    // Initial update for default selected phone
+    updatePhoneDetails();
+});
