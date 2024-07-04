@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var cash = document.getElementById("cash");
     var change = document.getElementById("change");
     var submitOrder = document.getElementById("submitOrder");
+    var receipt = document.getElementById("receipt");
 
     function updatePhoneDetails() {
         var selectedOption = phoneSelect.options[phoneSelect.selectedIndex];
@@ -50,8 +51,20 @@ document.addEventListener("DOMContentLoaded", function() {
         change.value = "Change: Php " + (cashTendered - totalAmount);
     }
 
+    function generateReceipt() {
+        var receiptText = "Receipt:\n\n";
+        receiptText += carts.value;
+        receiptText += "\n" + total.value + "\n";
+        receiptText += "Cash Tendered: Php " + cash.value + "\n";
+        receiptText += change.value + "\n";
+        receipt.textContent = receiptText;
+    }
+
     phoneSelect.addEventListener("change", updatePhoneDetails);
     addToCart.addEventListener("click", addOrder);
-    submitOrder.addEventListener("click", calculateChange);
+    submitOrder.addEventListener("click", function() {
+        calculateChange();
+        generateReceipt();
+    });
     cash.addEventListener("keyup", calculateChange);
 });
