@@ -23,6 +23,7 @@
                     <option value="s23" data-price="47000" data-img="images/s23.png" data-specs="6.8-inch display, 16GB RAM, 512GB Storage">Samsung S23</option>
                     <option value="iphone12" data-price="45000" data-img="images/iphone12.png" data-specs="6.1-inch display, 4GB RAM, 64GB Storage">iPhone 12</option>
                     <option value="iphone13" data-price="55000" data-img="images/iphone13.png" data-specs="6.1-inch display, 4GB RAM, 128GB Storage">iPhone 13</option>
+					<option value="iphone14" data-price="65000" data-img="images/iphone14.png" data-specs="6.1-inch display, 8GB RAM, 256GB Storage">iPhone 14</option>
                 </select>
                 <img id="phoneImage" src="images/s21.png" style="width:400px; height:500px;" class="img-thumbnail" alt="Phone Image"/>
                 <div id="phoneSpecs">Specifications of S21</div>
@@ -37,6 +38,10 @@
                 <input type="number" class="form-control" id="cash" placeholder="Cash Tendered"/>
                 <input type="text" class="form-control border-0" id="change" readonly placeholder="Change"/>
                 <button id="submitOrder" class="btn btn-primary mt-2">Submit Order</button>
+            </div>
+            <div class="col-4">
+                <label for="receipt">Receipt</label>
+                <textarea class="form-control" rows="20" id="receipt" readonly style="width:350px; height: 400px; font-size: 12px;"></textarea>
             </div>
         </div>
     </div>
