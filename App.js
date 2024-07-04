@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var phoneSpecs = document.getElementById("phoneSpecs");
     var phonePrice = document.getElementById("phonePrice");
     var quantity = document.getElementById("quantity");
+    var addToCart = document.getElementById("addToCart");
     var carts = document.getElementById("carts");
     var total = document.getElementById("total");
     var cash = document.getElementById("cash");
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     phoneSelect.addEventListener("change", updatePhoneDetails);
-    quantity.addEventListener("keyup", addOrder);
+    addToCart.addEventListener("click", addOrder);
     submitOrder.addEventListener("click", calculateChange);
     cash.addEventListener("keyup", calculateChange);
 });
