@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function addOrder() {
-        carts.textContent = ""; // Clear previous orders
         var selectedOption = phoneSelect.options[phoneSelect.selectedIndex];
         var price = parseFloat(selectedOption.getAttribute("data-price"));
         var qty = parseInt(quantity.value);
@@ -55,7 +54,4 @@ document.addEventListener("DOMContentLoaded", function() {
     quantity.addEventListener("keyup", addOrder);
     submitOrder.addEventListener("click", calculateChange);
     cash.addEventListener("keyup", calculateChange);
-
-    // Initial update for default selected phone
-    updatePhoneDetails();
 });
