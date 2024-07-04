@@ -28,6 +28,7 @@
                 <div id="phoneSpecs">Specifications of S21</div>
                 <label id="phonePrice">Price: Php 27000.00</label>
                 <input type="number" class="form-control" id="quantity" placeholder="Enter quantity"/>
+                <button id="addToCart" class="btn btn-primary mt-2">Add to Cart</button>
             </div>
             <div class="col-4">
                 <label for="carts"> Orders </label>
@@ -39,51 +40,6 @@
             </div>
         </div>
     </div>
-    <script src="App.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AT Cellphone Store</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center"> 
-                <h2>AT Cellphone Store</h2>
-                <hr class="hr" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 text-center">
-                <label for="phoneSelect">Select Phone:</label>
-                <select id="phoneSelect" class="form-control">
-                    <option value="s21" data-price="27000" data-img="images/s21.png" data-specs="6.2-inch display, 8GB RAM, 128GB Storage">Samsung S21</option>
-                    <option value="s22" data-price="37000" data-img="images/s22.png" data-specs="6.5-inch display, 12GB RAM, 256GB Storage">Samsung S22</option>
-                    <option value="s23" data-price="47000" data-img="images/s23.png" data-specs="6.8-inch display, 16GB RAM, 512GB Storage">Samsung S23</option>
-                    <option value="iphone12" data-price="45000" data-img="images/iphone12.png" data-specs="6.1-inch display, 4GB RAM, 64GB Storage">iPhone 12</option>
-                    <option value="iphone13" data-price="55000" data-img="images/iphone13.png" data-specs="6.1-inch display, 4GB RAM, 128GB Storage">iPhone 13</option>
-                </select>
-                <img id="phoneImage" src="images/s21.png" style="width:400px; height:500px;" class="img-thumbnail" alt="Phone Image"/>
-                <div id="phoneSpecs">Specifications of S21</div>
-                <label id="phonePrice">Price: Php 27000.00</label>
-                <input type="number" class="form-control" id="quantity" placeholder="Enter quantity"/>
-                <button id="addToCart" class="btn btn-success mt-2">Add to Cart</button>
-            </div>
-            <div class="col-4">
-                <label for="carts"> Orders </label>
-                <textarea class="form-control" rows="20" id="carts" cols="200" readonly style="width:350px; height: 400px; font-size: 12px;"></textarea>
-                <input type="text" class="form-control border-0" id="total" readonly placeholder="Total"/>
-                <input type="number" class="form-control" id="cash" placeholder="Cash Tendered"/>
-                <input type="text" class="form-control border-0" id="change" readonly placeholder="Change"/>
-                <button id="submitOrder" class="btn btn-primary mt-2">Submit Order</button>
-            </div>
-        </div>
-    </div>
-    <script src="App.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
