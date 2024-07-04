@@ -1,0 +1,52 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Text Centering */
+.text-center {
+    text-align: center;
+}
+
+/* Phone Image */
+#phoneImage {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Order Details */
+#carts {
+    width: 100%;
+    height: 200px;
+    font-size: 12px;
+}
+
+#total, #cash, #change {
+    width: 100%;
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+    .col-4 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    #phoneSelect, #quantity, #total, #cash, #change, #carts {
+        font-size: 16px;
+    }
+}
